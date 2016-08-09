@@ -1,7 +1,19 @@
-{% extends "base.html" %}
+{% extends "layout.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Index</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h4>Test Page</h4>
+                    <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

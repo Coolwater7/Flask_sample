@@ -6,12 +6,14 @@ class User(db.Model):
 	password = db.Column(db.String(100), unique=True)
 	email = db.Column(db.String(120), unique=True)
 	emailCheckYn = db.Column(db.String(1), unique=False)
+	regAton = db.Column(db.String(14), unique=False)
 
 	def __init__(self, username, password, email):
 		self.username = username
 		self.password = password
 		self.email = email
 		self.emailCheckYn = 'N'
+
 
 	def __repr__(self):
 		return '<User %r>' % self.username

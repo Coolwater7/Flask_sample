@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Error!</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    {% if errorMsg %}
+                    <h3>{{ errorMsg }}</h3>
+                    {% else %}
+                    <h3>System Error</h3>
+                    {% endif %}
+
+                    {% if errorDesc %}
+                    <p>{{ errorDesc }}</p>
+                    {% else %}
+                    <p>Please Try Again...</p>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,34 +1,42 @@
-<!-- extend base layout -->
-{% extends "base.html" %}
-
+{% extends "layout.html" %}
 {% block content %}
-<script type="text/javascript">
-function set_openid(openid, pr)
-{
-    u = openid.search('<username>')
-    if (u != -1) {
-        // openid requires username
-        user = prompt('Enter your ' + pr + ' username:')
-        openid = openid.substr(0, u) + user
-    }
-    form = document.forms['login'];
-    form.elements['openid'].value = openid
-}
-</script>
-<h1>Sign In</h1>
-<form action="" method="post" name="login">
-    {{ form.hidden_tag() }}
-    <p>
-        Please enter your OpenID, or select one of the providers below:<br>
-        {{ form.openid(size=80) }}
-        {% for error in form.openid.errors %}
-          <span style="color: red;">[{{error}}]</span>
-        {% endfor %}<br>
-        |{% for pr in providers %}
-          <a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a> |
-        {% endfor %}
-    </p>
-    <p>{{ form.remember_me }} Remember Me</p>
-    <p><input type="submit" value="Sign In"></p>
-</form>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Login</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                    <form name="sentMessage" id="loginForm" novalidate="" action="/login" method="post">
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required="" data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="Password" id="password" name="password" required="" data-validation-required-message="Please enter your password">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">로그인</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
