@@ -1,0 +1,29 @@
+From 7bf1bbfef626583b449b921745756fa63e411889 Mon Sep 17 00:00:00 2001
+From: Coolwater7 <ms4096@gmail.com>
+Date: Fri, 5 Aug 2016 17:20:25 +0900
+Subject: [PATCH] Delete config.py
+
+---
+ config.py | 10 ----------
+ 1 file changed, 10 deletions(-)
+ delete mode 100644 config.py
+
+diff --git a/config.py b/config.py
+deleted file mode 100644
+index f82f97a..0000000
+--- a/config.py
++++ /dev/null
+@@ -1,10 +0,0 @@
+-WTF_CSRF_ENABLED = True
+-SECRET_KEY = 'you-will-never-guess'
+-
+-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:qwert123@jkmysqlinstance.cne0dzlzcmnv.ap-northeast-1.rds.amazonaws.com:3306/kangms'
+-OPENID_PROVIDERS = [
+-    {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
+-    {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
+-    {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
+-    {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
+-    {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
+-- 
+2.8.1
+
