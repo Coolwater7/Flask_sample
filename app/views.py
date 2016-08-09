@@ -11,7 +11,6 @@ mail = Mail(app)
 @app.route('/index')
 def index():
 
-  print app.config['DOMAIN']
   user = {'nickname': 'Miguel'}  # fake user
   posts = [  # fake array of posts
         { 
@@ -68,7 +67,8 @@ def signUp():
   db.session.add(user)
   db.session.commit() # This is needed to write the changes to database
 
-  checkUrl = "http://localhost:8080/checkEmail?email=" + request.form['email'] +"&key="+base64.encodestring(user.regAton)
+  # checkUrl = "http://localhost:8080/checkEmail?email=" + request.form['email'] +"&key="+base64.encodestring(user.regAton)
+  checkUrl = app.config['DOMAIN']+"checkEmail?email=" + request.form['email'] +"&key="+base64.encodestring(user.regAton)
 
   msg = MailMessage('Hello', recipients = [request.form['email']])
   msg.body = "Test Site Email : " 
